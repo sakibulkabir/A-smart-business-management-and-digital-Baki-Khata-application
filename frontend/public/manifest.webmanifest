@@ -1,0 +1,10 @@
+{
+  "name": "HisabBondhu",
+  "short_name": "HisabBondhu",
+  "description": "Shohoj Hisab, Nirapod Bebsha",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f5f7fb",
+  "theme_color": "#101828",
+  "icons": []
+}

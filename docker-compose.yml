@@ -1,0 +1,29 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: hisabbondhu-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: hisabbondhu
+      POSTGRES_PASSWORD: change_this_local_password
+      POSTGRES_DB: hisabbondhu
+    ports:
+      - "5432:5432"
+    volumes:
+      - hisabbondhu_pg:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U hisabbondhu -d hisabbondhu"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+  redis:
+    image: redis:7-alpine
+    container_name: hisabbondhu-redis
+    restart: unless-stopped
+    ports:
+      - "6379:6379"
+    volumes:
+      - hisabbondhu_redis:/data
+volumes:
+  hisabbondhu_pg:
+  hisabbondhu_redis:
