@@ -2756,3 +2756,529 @@ tbody tr:hover {
     animation: none !important;
   }
 }
+
+
+
+
+
+/* =====================================================
+   HISABBONDHU — PREMIUM DASHBOARD REDESIGN
+   Dashboard only | Existing functionality unchanged
+===================================================== */
+
+/* Dashboard background */
+.page-content:has(.welcome-strip) {
+  position: relative;
+  isolation: isolate;
+  max-width: 1600px;
+  padding-top: 38px;
+  background:
+    radial-gradient(ellipse at 90% 5%, rgba(119, 91, 235, .07), transparent 35%),
+    #f5f6fc;
+  min-height: calc(100vh - 76px);
+}
+
+/* Heading */
+.page-content:has(.welcome-strip) > .page-heading {
+  margin-bottom: 27px;
+  animation: dashFadeUp .6s ease both;
+}
+
+.page-content:has(.welcome-strip) .page-heading h1 {
+  color: #17213a;
+  font-size: clamp(25px, 2.3vw, 32px);
+  font-weight: 800;
+  letter-spacing: -1.3px;
+}
+
+.page-content:has(.welcome-strip) .page-heading h1 span {
+  color: #8066ed;
+}
+
+.page-content:has(.welcome-strip) .page-heading p {
+  color: #8b95aa;
+  font-size: 13px;
+}
+
+/* Main action button */
+.page-content:has(.welcome-strip) .page-heading .primary-btn {
+  padding: 13px 20px;
+  border-radius: 11px;
+  background: linear-gradient(115deg, #8068ef, #6048d5);
+  box-shadow: 0 8px 22px rgba(105, 81, 220, .23);
+}
+
+.page-content:has(.welcome-strip) .page-heading .primary-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 13px 27px rgba(105, 81, 220, .32);
+}
+
+/* Premium welcome banner */
+.page-content:has(.welcome-strip) .welcome-strip {
+  min-height: 165px;
+  padding: 29px 32px;
+  margin-bottom: 23px;
+  border: 1px solid rgba(255,255,255,.16);
+  border-radius: 19px;
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 80% 0%, rgba(165, 144, 255, .45), transparent 40%),
+    linear-gradient(115deg, #171b3c 0%, #373078 55%, #6550c6 100%);
+  box-shadow:
+    0 15px 35px rgba(40, 35, 100, .15),
+    inset 0 1px 0 rgba(255,255,255,.14);
+  animation: dashFadeUp .7s ease both;
+}
+
+.page-content:has(.welcome-strip) .welcome-strip::before {
+  content: "";
+  position: absolute;
+  width: 340px;
+  height: 340px;
+  border: 1px solid rgba(255,255,255,.13);
+  border-radius: 50%;
+  right: 8%;
+  top: -220px;
+  box-shadow:
+    0 0 0 25px rgba(255,255,255,.035),
+    0 0 0 55px rgba(255,255,255,.025),
+    0 0 0 90px rgba(255,255,255,.018);
+  animation: dashRing 16s linear infinite;
+  z-index: -1;
+}
+
+.page-content:has(.welcome-strip) .welcome-strip::after {
+  content: "";
+  position: absolute;
+  width: 240px;
+  height: 240px;
+  right: 23%;
+  bottom: -200px;
+  border-radius: 50%;
+  background: rgba(132, 112, 255, .28);
+  filter: blur(45px);
+  animation: dashGlow 7s ease-in-out infinite alternate;
+  z-index: -1;
+}
+
+.page-content:has(.welcome-strip) .strip-label {
+  color: #c6bcff;
+  font-size: 10px;
+  letter-spacing: 1.8px;
+}
+
+.page-content:has(.welcome-strip) .welcome-strip h3 {
+  color: #fff;
+  font-size: 25px;
+  letter-spacing: -.7px;
+  margin: 9px 0 5px;
+}
+
+.page-content:has(.welcome-strip) .welcome-strip p {
+  color: #d1ccef;
+  font-size: 12px;
+}
+
+.page-content:has(.welcome-strip) .strip-symbol {
+  width: 66px;
+  height: 66px;
+  border-radius: 19px;
+  color: #fff;
+  background: rgba(255,255,255,.14);
+  border: 1px solid rgba(255,255,255,.2);
+  backdrop-filter: blur(15px);
+  box-shadow: 0 10px 25px rgba(0,0,0,.12);
+  animation: dashFloat 5s ease-in-out infinite;
+}
+
+.page-content:has(.welcome-strip) .strip-symbol svg {
+  width: 30px;
+  height: 30px;
+}
+
+/* Statistics grid */
+.page-content:has(.welcome-strip) .stats-grid {
+  gap: 17px;
+  margin-bottom: 22px;
+}
+
+.page-content:has(.welcome-strip) .stat-card {
+  min-height: 165px;
+  padding: 21px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #e9eaf3;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #fff, #fbfbff);
+  box-shadow: 0 5px 20px rgba(27, 36, 66, .035);
+  transition: transform .3s ease, box-shadow .3s ease, border-color .3s ease;
+  animation: dashFadeUp .7s ease both;
+}
+
+.page-content:has(.welcome-strip) .stat-card:nth-child(2) {
+  animation-delay: .08s;
+}
+
+.page-content:has(.welcome-strip) .stat-card:nth-child(3) {
+  animation-delay: .16s;
+}
+
+.page-content:has(.welcome-strip) .stat-card:nth-child(4) {
+  animation-delay: .24s;
+}
+
+.page-content:has(.welcome-strip) .stat-card::after {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  right: -48px;
+  top: -55px;
+  background: rgba(130, 105, 240, .055);
+  transition: transform .4s ease;
+}
+
+.page-content:has(.welcome-strip) .stat-card:hover {
+  transform: translateY(-6px);
+  border-color: #d8d0ff;
+  box-shadow: 0 15px 32px rgba(43, 39, 110, .09);
+}
+
+.page-content:has(.welcome-strip) .stat-card:hover::after {
+  transform: scale(1.6);
+}
+
+.page-content:has(.welcome-strip) .stat-icon {
+  width: 43px;
+  height: 43px;
+  border-radius: 13px;
+  box-shadow: 0 5px 13px rgba(50, 50, 100, .06);
+}
+
+.page-content:has(.welcome-strip) .stat-icon.violet {
+  background: linear-gradient(140deg, #eeeaff, #e4ddff);
+  color: #765ce4;
+}
+
+.page-content:has(.welcome-strip) .stat-icon.blue {
+  background: linear-gradient(140deg, #e6f3ff, #dcecff);
+  color: #3984d8;
+}
+
+.page-content:has(.welcome-strip) .stat-icon.orange {
+  background: linear-gradient(140deg, #fff0e2, #ffe7d0);
+  color: #e58b36;
+}
+
+.page-content:has(.welcome-strip) .stat-icon.green {
+  background: linear-gradient(140deg, #e1f8ed, #d5f3e4);
+  color: #27a875;
+}
+
+.page-content:has(.welcome-strip) .stat-card > span {
+  color: #818ba0;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.page-content:has(.welcome-strip) .stat-card strong {
+  color: #1d2941;
+  font-size: clamp(19px, 2vw, 25px);
+  font-weight: 800;
+  letter-spacing: -.8px;
+}
+
+.page-content:has(.welcome-strip) .stat-card small {
+  color: #a0a8b8;
+  font-size: 10px;
+}
+
+/* Dashboard content panels */
+.page-content:has(.welcome-strip) .content-grid {
+  grid-template-columns: 1.2fr .8fr;
+  gap: 19px;
+}
+
+.page-content:has(.welcome-strip) .panel {
+  padding: 23px;
+  border: 1px solid #e9eaf2;
+  border-radius: 17px;
+  background: linear-gradient(145deg, #fff, #fcfcff);
+  box-shadow: 0 6px 22px rgba(28, 37, 70, .035);
+  transition: box-shadow .3s ease, transform .3s ease;
+  animation: dashFadeUp .8s ease both;
+}
+
+.page-content:has(.welcome-strip) .panel:hover {
+  box-shadow: 0 13px 32px rgba(28, 37, 70, .065);
+}
+
+.page-content:has(.welcome-strip) .panel-head {
+  margin-bottom: 20px;
+}
+
+.page-content:has(.welcome-strip) .panel-head h3 {
+  color: #1d2941;
+  font-size: 15px;
+  font-weight: 800;
+  letter-spacing: -.3px;
+}
+
+.page-content:has(.welcome-strip) .panel-head p {
+  color: #99a2b3;
+  font-size: 11px;
+}
+
+.page-content:has(.welcome-strip) .soft-pill {
+  color: #755de0;
+  background: #f0edff;
+  border: 1px solid #e7e0ff;
+  padding: 7px 11px;
+  font-size: 9px;
+}
+
+.page-content:has(.welcome-strip) .live-dot {
+  color: #249d70;
+  background: #e9f8f0;
+  border: 1px solid #d8f1e4;
+  padding: 7px 11px;
+}
+
+/* Quick action cards */
+.page-content:has(.welcome-strip) .quick-grid {
+  gap: 12px;
+}
+
+.page-content:has(.welcome-strip) .quick-action {
+  min-height: 125px;
+  padding: 16px;
+  border: 1px solid #ececf5;
+  border-radius: 13px;
+  background: linear-gradient(145deg, #fff, #fafaff);
+  gap: 8px;
+  transition: all .3s ease;
+}
+
+.page-content:has(.welcome-strip) .quick-action:hover {
+  transform: translateY(-5px);
+  border-color: #cfc4ff;
+  background: linear-gradient(145deg, #fff, #f5f2ff);
+  box-shadow: 0 12px 25px rgba(109, 86, 220, .09);
+}
+
+.page-content:has(.welcome-strip) .quick-icon {
+  width: 37px;
+  height: 37px;
+  border-radius: 11px;
+  background: linear-gradient(145deg, #eeeaff, #e7e1ff);
+  color: #735bdc;
+  transition: transform .3s ease;
+}
+
+.page-content:has(.welcome-strip) .quick-action:hover .quick-icon {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.page-content:has(.welcome-strip) .quick-action b {
+  color: #29334a;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.page-content:has(.welcome-strip) .quick-action small {
+  color: #98a1b1;
+  font-size: 10px;
+}
+
+.page-content:has(.welcome-strip) .quick-arrow {
+  color: #9583e8;
+}
+
+/* Today's overview rows */
+.page-content:has(.welcome-strip) .overview-row {
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f1f6;
+}
+
+.page-content:has(.welcome-strip) .overview-icon {
+  width: 41px;
+  height: 41px;
+  border-radius: 12px;
+}
+
+.page-content:has(.welcome-strip) .overview-icon.orange {
+  background: #fff1e4;
+  color: #e49a4d;
+}
+
+.page-content:has(.welcome-strip) .overview-icon.green {
+  background: #e8f8ef;
+  color: #31a878;
+}
+
+.page-content:has(.welcome-strip) .overview-row b {
+  color: #354057;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.page-content:has(.welcome-strip) .overview-row small {
+  color: #a0a8b7;
+  font-size: 10px;
+}
+
+.page-content:has(.welcome-strip) .overview-row strong {
+  color: #253149;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+/* Helpful tip */
+.page-content:has(.welcome-strip) .tip-box {
+  padding: 14px;
+  margin-top: 18px;
+  border: 1px solid #e9e3ff;
+  border-radius: 12px;
+  background: linear-gradient(120deg, #f5f2ff, #f1f7ff);
+  color: #7865d2;
+}
+
+.page-content:has(.welcome-strip) .tip-box svg {
+  flex-shrink: 0;
+}
+
+.page-content:has(.welcome-strip) .tip-box p {
+  color: #777b9a;
+  font-size: 10px;
+  line-height: 1.7;
+}
+
+/* New shop setup card */
+.page-content:has(.welcome-card) .welcome-card {
+  background: linear-gradient(145deg, #fff, #f8f7ff);
+  border: 1px solid #e8e4f8;
+  border-radius: 22px;
+  box-shadow: 0 20px 55px rgba(45, 37, 100, .08);
+  animation: dashFadeUp .7s ease both;
+}
+
+.page-content:has(.welcome-card) .welcome-icon {
+  background: linear-gradient(135deg, #8068ef, #5d48d1);
+  color: #fff;
+  box-shadow: 0 10px 25px rgba(108, 92, 231, .25);
+}
+
+/* Animations */
+@keyframes dashFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes dashFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes dashRing {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes dashGlow {
+  from {
+    transform: translate(0, 0) scale(.9);
+    opacity: .55;
+  }
+  to {
+    transform: translate(-30px, -20px) scale(1.2);
+    opacity: 1;
+  }
+}
+
+/* Tablet */
+@media (max-width: 1100px) {
+  .page-content:has(.welcome-strip) .content-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Mobile */
+@media (max-width: 720px) {
+  .page-content:has(.welcome-strip) {
+    padding: 23px 16px 40px;
+  }
+
+  .page-content:has(.welcome-strip) .welcome-strip {
+    min-height: 140px;
+    padding: 21px;
+  }
+
+  .page-content:has(.welcome-strip) .welcome-strip h3 {
+    font-size: 21px;
+  }
+
+  .page-content:has(.welcome-strip) .strip-symbol {
+    width: 48px;
+    height: 48px;
+    border-radius: 14px;
+  }
+
+  .page-content:has(.welcome-strip) .stats-grid {
+    gap: 10px;
+  }
+
+  .page-content:has(.welcome-strip) .stat-card {
+    min-height: 145px;
+    padding: 14px;
+    gap: 7px;
+  }
+
+  .page-content:has(.welcome-strip) .stat-icon {
+    width: 35px;
+    height: 35px;
+  }
+
+  .page-content:has(.welcome-strip) .stat-card strong {
+    font-size: 17px;
+  }
+
+  .page-content:has(.welcome-strip) .panel {
+    padding: 16px;
+  }
+
+  .page-content:has(.welcome-strip) .quick-grid {
+    gap: 9px;
+  }
+
+  .page-content:has(.welcome-strip) .quick-action {
+    min-height: 120px;
+    padding: 12px;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .page-content:has(.welcome-strip) *,
+  .page-content:has(.welcome-strip)::before,
+  .page-content:has(.welcome-strip)::after {
+    animation: none !important;
+    transition: none !important;
+  }
+}
