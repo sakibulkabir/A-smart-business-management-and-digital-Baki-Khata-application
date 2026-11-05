@@ -14,7 +14,22 @@ import { errorHandler, notFound } from './middleware/error';
 
 export const app = express();
 app.use(helmet());
-app.use(cors({ origin: env.FRONTEND_URL, credentials: true }));
+const allowedOrigins = [
+  'https://business-management-digital-bakikhata.netlify.app',
+  'http://localhost:5173',
+  env.FRONTEND_URL
+].filter(Boolean);
+
+app.use(cors({
+  origin: (origin, callback) => {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 app.use(express.json({ limit: '1mb' }));
 app.use(morgan('dev'));
 app.use('/api/v1', rateLimit({ windowMs: 15 * 60 * 1000, limit: 300 }));
